@@ -155,4 +155,5 @@ for folder in os.listdir(tar_dir):
                 break
             else:
                 shutil.rmtree(folder)
+                break # 忘记break就会一直报错WinError3
 fileReseter3.fileReset(down_dir)
