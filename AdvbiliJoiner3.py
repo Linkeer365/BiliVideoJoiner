@@ -92,7 +92,7 @@ def main():
                                 reader_dict=json.loads(reader)
                                 flv_title,flv_partName=reader_dict['Title'],reader_dict['PartName']
                                 forbid_chars=['<','>','/','\\','|',':','"','=','*','?']
-                                for char in forbid_chars:
+                                for char in forbid_chars: # b站题目中存在/这种地址符号的处理
                                     if char in flv_title:
                                         flv_title=flv_title.replace(char,'#')
                                     if char in flv_partName:
