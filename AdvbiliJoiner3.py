@@ -95,8 +95,9 @@ def main():
                                 for char in forbid_chars: # b站题目中存在/这种地址符号的处理
                                     if char in flv_title:
                                         flv_title=flv_title.replace(char,'#')
-                                    if char in flv_partName:
-                                        flv_partName=flv_partName.replace(char,'#')
+                                    if not flv_partName is None: # 注意这里要做一个None的判定 照应下面的is None情况
+                                        if char in flv_partName:
+                                            flv_partName=flv_partName.replace(char,'#')
                                 # flv_title=flv_title.replace()
                                 # flv_title=''.join([each for each in flv_title if each not in forbid_chars])
                                 # flv_partName=''.join([each for each in flv_partName if each in forbid_chars])
